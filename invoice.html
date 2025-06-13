@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NBDevelopment Invoice</title>
+  <style>
+  body { font-family: Arial, sans-serif; background: #fffaf5; margin: 0; color: #381C0B; }
+  header { background: #bf360c; color: white; padding: 20px 0; text-align: center; }
+    nav { background: #e64a19; text-align: center; padding: 10px 0; }
+    nav a {
+      color: white; margin: 0 15px; text-decoration: none;
+      font-weight: bold; transition: color 0.3s ease;
+    }
+    nav a:hover { color: #ffe0b2; }
+    main { padding: 30px; text-align: center; }
+    footer {
+      background: #4e342e; color: #f5f5f5;
+      text-align: center; padding: 20px 10px;
+      position: relative; bottom: 0; width: 100%;
+    }
+    img.logo { width: 100px; margin-top: 15px; }
+  
+    .container { max-width: 600px; background: white; padding: 20px; margin: auto; border: 1px solid #ccc; border-radius: 10px; }
+    h2 { color: #bf360c; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    select, input { width: 100%; padding: 10px; margin-top: 5px; }
+    #total { margin-top: 15px; font-size: 18px; color: #2e7d32; font-weight: bold; }
+    button {
+      margin-top: 10px; padding: 10px 20px; background: #5d4037; color: white;
+      border: none; border-radius: 5px; cursor: pointer;
+    }
+  </style>
+</head>
+  <header>
+    <h1>Generate Invoice</h1> 
+    <img src="nbdev-logo.jpg" alt="NBDevelopment Logo" class="logo">
+  </header>
+ 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="invoice.html">Invoice</a>
+  </nav>
+<body>
+  <main>
+    <label>Client Name</label><input id="clientName" type="text">
+    <label>Product Type</label>
+    <select id="productType" onchange="updateOptions()">
+      <option value="">-- Select Type --</option>
+      <option value="Website">Website</option>
+      <option value="Flyer">Flyer</option>
+      <option value="WhatsApp Tool">WhatsApp Tool</option>
+    </select>
+    <label>Product Option</label>
+    <select id="productOption" onchange="calculateTotal()"></select>
+    <p id="total">Total: R0.00</p>
+    <button onclick="window.print()">Print / Save PDF</button>
+ 
+  <script>
+    const prices = {
+      "Website": { "Basic": 600, "Standard": 1000, "Advanced": 1500 },
+      "Flyer": { "Single": 150, "Pack of 3": 350 },
+      "WhatsApp Tool": { "Auto Reply": 250, "Order Bot": 500 }
+    };
+    function updateOptions() {
+      const type = document.getElementById("productType").value;
+      const option = document.getElementById("productOption");
+      option.innerHTML = "<option value=''>-- Select Option --</option>";
+      if (prices[type]) {
+        Object.entries(prices[type]).forEach(([opt, val]) => {
+          option.innerHTML += `<option value="${opt}">${opt}</option>`;
+        });
+      }
+    }
+    function calculateTotal() {
+      const type = document.getElementById("productType").value;
+      const opt = document.getElementById("productOption").value;
+      const total = document.getElementById("total");
+      total.textContent = prices[type] && prices[type][opt]
+        ? `Total: R${prices[type][opt]}.00` : "Total: R0.00";
+    }
+  </script>  
+ </main>
+</body>
+<footer>
+    <p>Contact us: ngbontsi@gmail.com | WhatsApp: 064 632 0739</p>
+    <p>© 2025 NBDevelopment</p>
+  </footer>
+</html>
