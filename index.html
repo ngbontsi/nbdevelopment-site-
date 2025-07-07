@@ -1,181 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>NBDevelopment | Let the tech work for you</title>
-  <!--  <link rel="stylesheet" href="materialize.min.css"> <!-- Downloaded offline 
-  <link rel="stylesheet" href="style.css"> <!-- Custom chocolate theme -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; scroll-behavior: smooth; background: #fefcf9; color: #3e2723; }
-    header, footer { background: #bf360c; color: white; text-align: center; padding: 20px 10px; }
-    nav { background: #d84315; display: flex; justify-content: center; gap: 20px; padding: 10px; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px 20px; max-width: 900px; margin: auto; }
-    h2 { color: #d84315; border-bottom: 2px solid #ffe0b2; padding-bottom: 10px; }
-    .gallery img { width: 240px; border-radius: 8px; margin: 10px; transition: transform 0.3s; }
-    .gallery img:hover { transform: scale(1.05); }
-    form input, form textarea, form select, button {
-      width: 100%; padding: 10px; margin-top: 10px;
-      border: 1px solid #ccc; border-radius: 5px;
-    }
-    button { background: #5d4037; color: white; font-weight: bold; cursor: pointer; }
-    .whatsapp-button {
-      display: inline-block; background: #25D366; color: white;
-      padding: 10px 20px; text-decoration: none; border-radius: 5px;
-      margin-top: 20px; font-weight: bold;
-    }
-    footer p { margin: 5px 0; font-size: 14px; }
-  img.logo { width: 100px; margin-top: 15px; }
-  </style>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <header>
+    <h1>NBDevelopment</h1>
+    <p>Let the tech work for you</p>
+    <img src="nbdev-logo.jpg" alt="NBDevelopment Logo" class="logo">
+  </header>
 
-<header>
-  <h1>NBDevelopment</h1>
-  <p>Let the tech work for you</p>
-  <img src="nbdev-logo.jpg" alt="NBDevelopment Logo" class="logo">
-</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Services</a>
+    <a href="#form">Client</a>
+    <a href="#invoice">Invoice</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#gallery">Services</a>
-  <a href="#form">Client</a>
-  <a href="#invoice">Invoice</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>We provide affordable websites, flyers, ordering tools, and WhatsApp automation for small businesses in Cradock and across South Africa.</p>
+    <p> NB Development is a passion-driven initiative focused on helping individuals and small businesses grow through smart, affordable digital solutions. From websites to systems and mobile apps, we believe in using our technical skills to make a difference in life.</p>
+  </section>
 
-<section id="home">
-  <h2>Welcome</h2>
-  <p>We provide affordable websites, flyers, ordering tools, and WhatsApp automation for small businesses in Cradock and across South Africa.</p>
-  <p> NB Development is a passion-driven initiative focused on helping individuals and small businesses grow through smart, affordable digital solutions. From websites to systems and mobile apps, we believe in using our technical skills to make a difference in life.</p>
-</section>
-
-<section id="gallery">
-  <h2>Services</h2>
-  <div class="gallery">
-    <img src="flyer.jpeg" alt="Example 1">
-    <img src="flyer1.png" alt="Example 2">
-    <img src="flyer2.png" alt="Example 2">
-    <img src="flyer3.jpg" alt="Example 2">
-    <img src="pic.jpg" alt="Example 1">
-    <img src="pic1.jpg" alt="Example 2">
-    <img src="pic2 .jpg" alt="Example 2">
-    <img src="pic3.jpg" alt="Example 2">
-    <img src="pic4.jpg" alt="Example 1">
-    <img src="pic5.jpg" alt="Example 2">
-  </div>
-</section>
-
-<section id="form" class="section container">
-  <h2>Client Form</h2>
-  <form id="clientForm">
-    
-   <div class="input-field"> <label for="name">Full Name</label><input type="text" id="name" required></div>
-<div class="input-field"><label for="email">Email</label><input type="email" id="email" required></div>
-<div class="input-field"><label for="business">Business Name</label><input type="text" id="business"></div>
-    <div class="input-field">
-    <select id="siteType">
-      <option value="infop" selected>Business Info Page</option>
-      <option value="gallery">Gallery or Portfolio</option>
-      <option value="order">Ordering Form</option>
-      <option value="online">Online Store</option>
-    </select>
-       <label>Type of Website</label>
+  <section id="gallery">
+    <h2>Services</h2>
+    <div class="menu-items">
+      <div class="item"> <img src="flyer.jpeg" alt="Example 1"></div>
+      <div class="item"> <img src="flyer1.png" alt="Example 2"></div>
+ <div class="item"><img src="flyer2.png" alt="Example 2"></div>
+ <div class="item"><img src="flyer3.jpg" alt="Example 2"></div>
+ <div class="item"><img src="pic.jpg" alt="Example 1"></div>
+ <div class="item"><img src="pic1.jpg" alt="Example 2"></div>
+ <div class="item"><img src="pic2 .jpg" alt="Example 2"></div>
+ <div class="item"><img src="pic3.jpg" alt="Example 2"></div>
+ <div class="item"><img src="pic4.jpg" alt="Example 1"></div>
+ <div class="item"><img src="pic5.jpg" alt="Example 2"></div>
     </div>
- <div class="input-field">  <label>Message</label><textarea name="message" class="materialize-textarea" rows="4"></textarea></div>
-    
-    <button type="button" onclick="generatePDF()">Submit & Download PDF</button>
-  </form>
-</section>
+  </section>
 
-<section id="invoice">
-  <h2>Invoice Generator</h2>
-   <form id="invoiceForm">
-  <label>Client Name</label><input id="clientName" type="text">
-  <label>Product Type</label>
-  <select id="productType" onchange="updateOptions()">
-    <option value="">-- Select Type --</option>
-    <option value="Website" selected>Website</option>
-    <option value="Flyer">Flyer</option>
-    <option value="WhatsApp Tool">WhatsApp Tool</option>
-  </select>
-  <label>Product Option</label>
-  <select id="productOption" onchange="calculateTotal()"></select>
-  <p id="total">Total: R0.00</p>
-  <button onclick="generateInvoicePDF()">Print / Save PDF</button>
-  </form>
-</section>
+  <section id="form" class="section container">
+    <h2>Client Form</h2>
+    <form id="clientForm">
+      <div class="input-field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="input-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="input-field">
+        <label for="business">Business Name</label>
+        <input type="text" id="business">
+      </div>
+      <div class="input-field">
+        <label for="siteType">Type of Website</label>
+        <select id="siteType">
+          <option value="infop" selected>Business Info Page</option>
+          <option value="gallery">Gallery or Portfolio</option>
+          <option value="order">Ordering Form</option>
+          <option value="online">Online Store</option>
+        </select>
+      </div>
+      <div class="input-field">
+        <label>Message</label>
+        <textarea name="message" rows="4"></textarea>
+      </div>
+      <button type="button" onclick="generatePDF()">Submit & Download PDF</button>
+    </form>
+  </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Need help or want to get started?</p>
-  <a class="whatsapp-button" href="https://wa.me/27646320739?text=Hi%20NBDevelopment,%20I'm%20interested%20in%20your%20services.">📱 Message us on WhatsApp</a>
-</section>
+  <section id="invoice">
+    <h2>Invoice Generator</h2>
+    <form id="invoiceForm">
+      <label>Client Name</label><input id="clientName" type="text">
+      <label>Product Type</label>
+      <select id="productType" onchange="updateOptions()">
+        <option value="">-- Select Type --</option>
+        <option value="Website" selected>Website</option>
+        <option value="Flyer">Flyer</option>
+        <option value="WhatsApp Tool">WhatsApp Tool</option>
+      </select>
+      <label>Product Option</label>
+      <select id="productOption" onchange="calculateTotal()"></select>
+      <p id="total">Total: R0.00</p>
+      <button onclick="generateInvoicePDF()">Print / Save PDF</button>
+    </form>
+  </section>
 
-<footer>
-  <p>NBDevelopment | Cradock, South Africa</p>
-  <p>Email: ngbontsi@gmail.com | WhatsApp: 064 632 0739</p>
-  <p>© 2025 NBDevelopment</p>
-</footer>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Need help or want to get started?</p>
+    <a class="whatsapp-button" href="https://wa.me/27646320739?text=Hi%20NBDevelopment,%20I'm%20interested%20in%20your%20services.">📱 Message us on WhatsApp</a>
+  </section>
 
-<script>
-const prices = {
-  "Website": { "Basic": 600, "Standard": 1000, "Advanced": 1500 },
-  "Flyer": { "Single": 150, "Pack of 3": 300 },
-  "WhatsApp Tool": { "Auto Reply": 250, "Order Bot": 450 }
-};
-function updateOptions() {
-  const type = document.getElementById("productType").value;
-  const option = document.getElementById("productOption");
-  option.innerHTML = "<option value=''>-- Select Option --</option>";
-  if (prices[type]) {
-    Object.entries(prices[type]).forEach(([opt]) => {
-      option.innerHTML += `<option value="${opt}">${opt}</option>`;
-    });
-  }
-}
-function calculateTotal() {
-  const type = document.getElementById("productType").value;
-  const opt = document.getElementById("productOption").value;
-  const total = document.getElementById("total");
-  total.textContent = prices[type] && prices[type][opt]
-    ? `Total: R${prices[type][opt]}.00` : "Total: R0.00";
-}
-
-function generatePDF() {
-  const form = document.getElementById('clientForm');
-  const data = new FormData(form);
-  let content = "Client Form Submission:\n\n";
-  console.log(data.entries());
-  for (let [key, value] of data.entries()) {
-    content += `${key}: ${value}\n`;
-  }
-  console.log("Content output:", content);
-  const blob = new Blob([content], { type: "application/pdf" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "NBDevelopment_Client_Form.pdf";
-  console.log("this is the link",link.download);
-  link.click();
-}
-  function generateInvoicePDF() {
-  const form = document.getElementById('invoiceForm');
-  const data = new FormData(form);
-  let content = "Invoice Form Submission:\n\n";
-    console.log(data.entries());
-  for (let [key, value] of data.entries()) {
-    content += `${key}: ${value}\n`;
-  }
-  const blob = new Blob([content], { type: "application/pdf" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "NBDevelopment_Invoice_Form.pdf";
-  link.click();
-}
-</script>
-
+  <footer>
+    <p>NBDevelopment | Cradock, South Africa</p>
+    <p>Email: ngbontsi@gmail.com | WhatsApp: 064 632 0739</p>
+    <p>© 2025 NBDevelopment</p>
+  </footer>
 </body>
 </html>
